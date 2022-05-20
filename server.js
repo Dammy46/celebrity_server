@@ -36,6 +36,7 @@ app.post('/imageurl', (req, res) => {
   image.handleAPI(req, res);
 });
 
-app.listen(3001, () => {
-  console.log('actve port');
+const PORT = process.env.PORT
+app.listen(PORT || 3001, () => {
+  console.log(`server is running on ${PORT}` );
 });
