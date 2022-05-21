@@ -12,10 +12,10 @@ const image = require('./controller/image');
 const db = knex({
   client: 'pg',
   connection: {
-    host: 'postgresql-corrugated-35786',
-    user: 'postgres',
-    password: 'password',
-    database: 'smart_brain',
+    host: process.env.DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false,
+    },
   },
 });
 const app = express();
